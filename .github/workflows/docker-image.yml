@@ -34,7 +34,7 @@ jobs:
         run: echo ${{ secrets.SSHKEYPUBLIC }} > ~/.ssh/id_rsa.pub
 
       - name: Get Private SSH Key
-        run: echo ${{ secrets.SSHKEYPRIVATE }} > ~/.ssh/id_rsa
+        run: echo -e ${{ secrets.SSHKEYPRIVATE }} > ~/.ssh/id_rsa
 
       - name: Get SSH configuration
         run: echo ${{ secrets.SSHCONFIG }} > ~/.ssh/
