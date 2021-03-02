@@ -11,3 +11,4 @@ restart:
 push:
 	docker build -t alexohneander/dev-null-blog .
 	docker push alexohneander/dev-null-blog
+	ssh root@159.69.39.254 "docker service update dev-null-blog --image alexohneander/dev-null-blog:latest"
