@@ -15,6 +15,10 @@ On this page you can find some information about me and a few blog posts I wrote
 Life so far... | Passionate about... | Thinking about...
 - Breathing since 1994 | - Food | - Cloud-Native Apps
 
+Life so far...  | Passionate about...   | Thinking about...
+------          | ------                | ------
+Cell            | Cell                  | Cell
+
 ### Contact Me
 
 [moin@wellnitz-alex.de](mailto:moin@wellnitz-alex.de)
