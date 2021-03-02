@@ -4,11 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+Professional DevOps Engineer at ComValue | Working with Python, Ruby, Dotnet, Kubernetes, Docker and more.
 
 ### Contact me
 
