@@ -37,7 +37,7 @@ jobs:
         run: echo -e ${{ secrets.SSHKEYPRIVATE }} > ~/.ssh/id_rsa
 
       - name: Get SSH configuration
-        run: echo -e ${{ secrets.SSHCONFIG }} > ~/.ssh/
+        run: echo -e ${{ secrets.SSHCONFIG }} > ~/.ssh/config
 
       - name: Update Docker Swarm Service
         run: ssh root@159.69.39.254 "docker service update dev-null-blog --image alexohneander/dev-null-blog:latest"
