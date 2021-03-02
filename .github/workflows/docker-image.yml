@@ -27,6 +27,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Make SSH Directory
+        run: mkdir ~/.ssh
+
       - name: Get Public SSH Key
         run: echo ${{ secrets.SSHKEYPUBLIC }} > ~/.ssh/id_rsa.pub
 
