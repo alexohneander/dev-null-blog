@@ -32,6 +32,7 @@ jobs:
         with:
           key: ${{ secrets.SSHKEYPRIVATE }}
           name: id_rsa # optional
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
           config: ${{ secrets.SSHCONFIG }} # ssh_config; optional
 
       - name: Update Docker Swarm Service
