@@ -1,0 +1,5 @@
+docker service create \
+--name dev-null-blog \
+--replicas 2 \
+--publish 80:4000 \
+alexohneander/dev-null-blog
