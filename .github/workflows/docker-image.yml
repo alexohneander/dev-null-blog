@@ -25,6 +25,7 @@ jobs:
           tags: alexohneander/dev-null-blog:latest
 
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Install SSH key
