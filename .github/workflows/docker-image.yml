@@ -9,9 +9,7 @@ on:
 jobs:
 
   build:
-
     runs-on: ubuntu-latest
-
     steps:
       - name: Login to DockerHub
         uses: docker/login-action@v1 
@@ -25,4 +23,22 @@ jobs:
         with:
           push: true
           tags: alexohneander/dev-null-blog:latest
-          
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Public SSH Key
+        run: echo ${{ secrets.SSHKEYPUBLIC }} > ~/.ssh/id_rsa.pub
+
+      - name: Get Private SSH Key
+        run: echo ${{ secrets.SSHKEYPRIVATE }} > ~/.ssh/id_rsa
+
+      - name: Get SSH configuration
+        run: echo ${{ secrets.SSHCONFIG }} > ~/.ssh/
+
+      - name: Update Docker Swarm Service
+        run: ssh root@159.69.39.254 "docker service update dev-null-blog --image alexohneander/dev-null-blog:latest"
+
+          # remote_docker_host: root@159.69.39.254
+          # ssh_public_key: ${{ secrets.SSHKEYPUBLIC }}
+          # ssh_private_key: ${{ secrets.SSHKEYPRIVATE }}
