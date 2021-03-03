@@ -28,11 +28,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Build Image
-        run: docker build -t dev-null-blog .
-
       - name: Run Docker Image 
-        run: docker run -p 4000:4000 -it --rm --name dev-null-blog dev-null-blog &
+        run: docker run -p 4000:4000 -it --rm --name dev-null-blog alexohneander/dev-null-blog:latest &
 
   deploy:
     needs: testing
