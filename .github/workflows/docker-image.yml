@@ -45,7 +45,7 @@ jobs:
           headless: true
 
   deploy:
-    needs: testing
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Install SSH key
