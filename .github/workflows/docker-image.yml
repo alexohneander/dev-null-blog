@@ -24,8 +24,18 @@ jobs:
           push: true
           tags: alexohneander/dev-null-blog:latest
 
-  deploy:
+  testing:
+    runs-on: ubuntu-latest
     needs: build
+    steps:
+      - name: Build Image
+        run: docker build -t dev-null-blog .
+
+      - name: Run Docker Image 
+        run: docker run -p 4000:4000 -it --rm --name dev-null-blog dev-null-blog &
+
+  deploy:
+    needs: testing
     runs-on: ubuntu-latest
     steps:
       - name: Install SSH key
