@@ -31,13 +31,14 @@ jobs:
       - name: Run Docker Image 
         run: docker run -p 4000:4000 -it --rm --name dev-null-blog alexohneander/dev-null-blog:latest &
 
+      - uses: actions/checkout@v2
+
       - name: install cypress 
         run: npm install
 
       - name: install cypress in maschine
         run: npm install cypress --save-dev
 
-      - uses: actions/checkout@v2
       - uses: cypress-io/github-action@v2
         with:
           browser: chrome
