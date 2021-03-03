@@ -19,3 +19,7 @@ I want to create a stable environment for the web applications so that they can 
 Bis jetzt muss nicht so viel gesichert werden, da die Web Application (der Blog) stateless läuft und somit keine Daten anfallen.
 
 Was ich bisher sichere sind die Konfigurationsdateien und die Logs. Dies mache ich mit einem CronJob der alle 8 Stunden ausgeführt wird und auf meine NAS Zuhause über rsync schreibt.
+
+## Monitoring
+
+The whole thing is monitored with Grafana and Prometheus. A prometheus node exporter runs on each Docker Swarm node to monitor the system.
